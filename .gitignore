@@ -1,0 +1,28 @@
+# .gitignore
+
+# --- 보안 (Security) ---
+# 스트림릿의 API 키 파일입니다. 절대로 깃허브에 올리면 안 됩니다.
+.streamlit/secrets.toml
+
+# --- 파이썬 관련 (Python related) ---
+# 가상환경 폴더 (macOS, Linux, Windows)
+# 프로젝트 실행 환경은 각자 다르므로, 공유할 필요가 없습니다.
+venv/
+.venv/
+env/
+.env/
+
+# 파이썬 캐시 파일 및 컴파일된 파일
+# 실행 시 자동으로 생성되므로, 공유할 필요가 없습니다.
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+
+# --- 운영체제 관련 (OS specific) ---
+# macOS 시스템 파일
+.DS_Store
+
+# Windows 썸네일 캐시
+Thumbs.db
