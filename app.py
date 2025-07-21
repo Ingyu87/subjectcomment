@@ -140,7 +140,7 @@ def get_achievement_standards(subject_block, domain):
         return []
 
 def generate_prompt(guidelines, standard_info, num_high, num_mid, num_low):
-    """Gemini API에 보낼 프롬프트를 생성하는 함수 (품질 개선을 위해 대폭 수정)"""
+    """Gemini API에 보낼 프롬프트를 생성하는 함수"""
     examples = guidelines.get('3. 작성 예시', {})
     summary = guidelines.get('5. 정리', '학생의 학습 과정과 변화를 기록하는 ‘관찰 기반 서술형 기록’입니다.')
 
@@ -308,3 +308,23 @@ with col2:
         st.session_state.final_sentences = []
         st.session_state.start_generation = False
         st.rerun()
+
+# --- 7. 워터마크 추가 ---
+st.markdown(
+    """
+    <style>
+    .watermark {
+        position: fixed;
+        bottom: 5px;
+        right: 5px;
+        opacity: 0.5;
+        z-index: 99;
+        color: gray;
+        font-size: 14px;
+        user-select: none; /* 사용자가 텍스트를 선택하지 못하게 함 */
+    }
+    </style>
+    <div class="watermark">서울가동초 백인규</div>
+    """,
+    unsafe_allow_html=True
+)
