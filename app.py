@@ -215,7 +215,7 @@ def reset_generation_state():
     st.session_state.start_generation = False
 
 # --- 6. UI 렌더링 ---
-st.title("✍️ AI 교과평어 생성 도우미")
+st.title("✍️ 2022개정교육과정 AI 교과평어 생성 도우미")
 st.markdown("2022 개정 교육과정에 기반하여, 학생의 성취수준에 맞는 교과평어 문장을 생성하고 조합할 수 있습니다.")
 
 # 사이드바 UI 구성
