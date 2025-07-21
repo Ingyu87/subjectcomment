@@ -9,7 +9,7 @@ import re
 # --- 1. 기본 페이지 설정 ---
 # 웹앱의 제목과 레이아웃을 설정합니다.
 st.set_page_config(
-    page_title="2022 교육과정 기반 AI 교과평어 생성 도우미",
+    page_title="AI 교과평어 생성 도우미",
     page_icon="✍️",
     layout="wide",
 )
@@ -300,31 +300,13 @@ edited_text = st.text_area(
     placeholder="생성된 문장을 클릭하면 이곳에 추가됩니다. 자유롭게 편집할 수 있습니다."
 )
 
-col1, col2, _ = st.columns([1, 1, 4])
+# 복사 버튼 대신 워터마크를, 그리고 초기화 버튼을 배치합니다.
+col1, col2, _ = st.columns([2, 1, 3]) # 컬럼 비율 조정
 with col1:
-    st.button("📋 내용 복사", help="텍스트 영역의 내용을 직접 복사(Ctrl+C)하세요.")
+    # 워터마크 텍스트
+    st.markdown("<sub>서울가동초 백인규</sub>", unsafe_allow_html=True)
 with col2:
     if st.button("🔄 모두 지우기"):
         st.session_state.final_sentences = []
         st.session_state.start_generation = False
         st.rerun()
-
-# --- 7. 워터마크 추가 ---
-st.markdown(
-    """
-    <style>
-    .watermark {
-        position: fixed;
-        bottom: 5px;
-        left: 5px;
-        opacity: 0.5;
-        z-index: 99;
-        color: gray;
-        font-size: 14px;
-        user-select: none; /* 사용자가 텍스트를 선택하지 못하게 함 */
-    }
-    </style>
-    <div class="watermark">서울가동초 백인규</div>
-    """,
-    unsafe_allow_html=True
-)
