@@ -316,7 +316,7 @@ st.markdown(
     .watermark {
         position: fixed;
         bottom: 5px;
-        right: 5px;
+        left: 5px;
         opacity: 0.5;
         z-index: 99;
         color: gray;
