@@ -9,7 +9,7 @@ import re
 # --- 1. 기본 페이지 설정 ---
 # 웹앱의 제목과 레이아웃을 설정합니다.
 st.set_page_config(
-    page_title="AI 교과평어 생성 도우미",
+    page_title="2022 교육과정 기반 AI 교과평어 생성 도우미",
     page_icon="✍️",
     layout="wide",
 )
